@@ -51,7 +51,7 @@ em{font-style:italic}
 .loader__curtain{position:absolute;inset:0;background:var(--sage);transform:scaleY(0);transform-origin:bottom}
 
 /* ---------- cursor: máquina de tatuar, siempre igual ---------- */
-html,body,*,*::before,*::after{cursor:url("../assets/cursor.svg") 5 27,auto!important}
+html,body,*,*::before,*::after{cursor:url("../assets/cursor.png?v=3") 5 27,auto!important;cursor:-webkit-image-set(url("../assets/cursor.png?v=3") 1x,url("../assets/cursor@2x.png?v=3") 2x) 5 27,auto!important;cursor:image-set(url("../assets/cursor.png?v=3") 1x,url("../assets/cursor@2x.png?v=3") 2x) 5 27,auto!important}
 
 /* ---------- buttons ---------- */
 .btn{position:relative;display:inline-flex;align-items:center;justify-content:center;padding:14px 26px;border-radius:999px;font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;overflow:hidden;isolation:isolate}
