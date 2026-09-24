@@ -118,24 +118,8 @@
       .from('.nav', { opacity: 0, duration: 1, ease: 'expo.out' }, 0.5);
   }
 
-  /* ---------- cursor ---------- */
+  /* ---------- botones magnéticos ---------- */
   if (!isTouch) {
-    const cur = $('.cursor'), dot = $('.cursor__dot'), ring = $('.cursor__ring'), label = $('.cursor__label');
-    const pos = { x: innerWidth / 2, y: innerHeight / 2 }, r = { ...pos };
-    addEventListener('mousemove', e => { pos.x = e.clientX; pos.y = e.clientY; });
-    gsap.ticker.add(() => {
-      r.x += (pos.x - r.x) * 0.16; r.y += (pos.y - r.y) * 0.16;
-      dot.style.transform = `translate(${pos.x}px,${pos.y}px)`;
-      ring.style.transform = `translate(${r.x}px,${r.y}px)`;
-    });
-    document.addEventListener('mouseover', e => {
-      const media = e.target.closest('[data-cursor]');
-      const hov = e.target.closest('a, button, [data-hover], .service');
-      cur.classList.toggle('is-media', !!media);
-      cur.classList.toggle('is-hover', !media && !!hov);
-      if (media) label.textContent = media.dataset.cursor;
-    });
-    // botones magnéticos
     $$('[data-magnetic]').forEach(el => {
       const xTo = gsap.quickTo(el, 'x', { duration: 0.6, ease: 'elastic.out(1,.4)' });
       const yTo = gsap.quickTo(el, 'y', { duration: 0.6, ease: 'elastic.out(1,.4)' });
